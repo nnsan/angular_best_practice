@@ -4,7 +4,7 @@
   "description": "Collected all the best practice of Front-end members in real projects.",
   "main": "index.js",
   "scripts": {
-    "start": "http-server -p 8080 -a localhost -o -c-1 --cors"
+    "start": "http-server -p 9090 -a localhost -o -c-1 --cors"
   },
   "repository": {
     "type": "git",

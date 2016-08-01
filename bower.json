@@ -1,0 +1,27 @@
+{
+  "name": "angular_best_practice",
+  "description": "Collected all the best practice of Front-end members in real projects.",
+  "main": "index.js",
+  "authors": [
+    "San Nguyen"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "angular",
+    "best",
+    "practice"
+  ],
+  "homepage": "https://github.com/nnsan/angular_best_practice",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-route": "^1.5.8"
+  }
+}

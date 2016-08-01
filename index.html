@@ -3,17 +3,23 @@
 <head lang="en">
   <meta charset="UTF-8">
 
-  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <!--This support for $location html5 mode-->
+  <base href="/">
+
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
 
   <link rel="stylesheet" href="stylesheet/main.css">
 
   <title>Angular Best Practice</title>
 </head>
 <body>
-
+  <ng-view class="main-view"></ng-view>
 <!--Load all javascript files-->
   <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+  <script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
   <script type="text/javascript" src="js/index.js"></script>
+
+  <script type="text/javascript" src="js/controller/home.controller.js"></script>
 </body>
 </html>

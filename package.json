@@ -1,0 +1,28 @@
+{
+  "name": "angular_best_practice",
+  "version": "1.0.0",
+  "description": "Collected all the best practice of Front-end members in real projects.",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server -p 8080 -a localhost -o -c-1 --cors"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nnsan/angular_best_practice.git"
+  },
+  "keywords": [
+    "angular",
+    "best",
+    "practice"
+  ],
+  "author": "San Nguyen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nnsan/angular_best_practice/issues"
+  },
+  "homepage": "https://github.com/nnsan/angular_best_practice#readme",
+  "dependencies": {
+    "bower": "^1.7.9",
+    "http-server": "^0.9.0"
+  }
+}

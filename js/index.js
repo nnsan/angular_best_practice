@@ -26,6 +26,10 @@ mainModule.config([
         requireAdmin: false,
         requireLogin: true
       }
+    }).when("/form", {
+      templateUrl: "views/form.html",
+      controller: "form.controller",
+      controllerAs: "formCtrl"
     });
 
     $routeProvider.otherwise({
@@ -35,7 +39,7 @@ mainModule.config([
     });
 
     // https://docs.angularjs.org/guide/$location
-    $locationProvider.html5Mode(true)
+    //$locationProvider.html5Mode(true)
   }
 ]);
 

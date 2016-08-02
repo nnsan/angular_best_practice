@@ -1,3 +1,52 @@
-.main-view {
-
+body {
+  font-family: 'Helvetica', Arial, sans-serif;
+  font-size: 16px;
 }
+
+form input, form select, form textarea {
+  font-size: inherit;
+  font-family: inherit;
+  display: block;
+
+  padding: 0.25em;
+  border-radius: 5px;
+  border: 1px solid #cfcfcf;
+}
+
+/*Style for common layout*/
+
+.main-view {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+}
+
+.content-wrapper, .preview-wrapper {
+  flex: 1;
+  overflow: auto;
+  padding: 0.75em;
+}
+
+.content-wrapper {
+  border-right: solid 1px #9d9d9d;
+}
+
+/*Style for Form Page*/
+.field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.75em;
+}
+.field:last-child {
+  margin-bottom: 0;
+}
+
+.field label {
+  margin-bottom: 0.25em;
+}
+

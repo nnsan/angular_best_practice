@@ -1,8 +1,26 @@
 <div class="content-wrapper">
+  <div class="field">
+    <label><input type="checkbox" ng-model="isContactForm"/>Contact Form</label>
+  </div>
+
   <form name="formContact">
-    <div class="field" ng-repeat="item in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14] track by $index">
+    <div class="field required">
       <label>Contact Name</label>
-      <input type="text" ng-model="name">
+      <input name="name" type="text" ng-model="data.name" required>
+    </div>
+    <div class="field required">
+      <label>Email</label>
+      <input name="email" type="text" ng-model="data.email" required>
+    </div>
+    <div class="field">
+      <label><input type="checkbox" ng-model="data.isStudent"/> Is Student</label>
+    </div>
+    <div class="field required" ng-if="data.isStudent">
+      <label>Student Code</label>
+      <input name="studentCode" type="text" ng-model="data.studentCode" required>
+    </div>
+    <div class="button-container">
+      <button ng-click="formCtrl.showReview()">Check</button>
     </div>
   </form>
 </div>

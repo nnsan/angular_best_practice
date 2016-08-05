@@ -4,7 +4,7 @@ mainModule.controller("home.controller", [
   function ($scope, $location) {
     var me = this;
 
-    $scope.greeting = "Hello World! I'm a beautiful girl";
+    $scope.greeting = "Hello World! Welcome to the Angular Best practice";
 
     me.goFormPage = function () {
       $location.path("/form");

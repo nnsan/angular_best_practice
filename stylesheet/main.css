@@ -50,3 +50,12 @@ form input, form select, form textarea {
   margin-bottom: 0.25em;
 }
 
+.field input[type="checkbox"] {
+  display: inline;
+}
+
+.field.required label:after {
+  content: "*";
+  color: #ff0000;
+}
+

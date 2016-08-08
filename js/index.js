@@ -20,7 +20,7 @@ mainModule.config([
       templateUrl: function () {
         return "views/home.html";
       },
-      controller: "home.controller",
+      controller: "home",
       controllerAs: "homeCtrl",
       access: {
         requireAdmin: false,
@@ -28,23 +28,23 @@ mainModule.config([
       }
     }).when("/form.ng-if", {
       templateUrl: "views/form.html",
-      controller: "form.controller",
+      controller: "form",
       controllerAs: "formCtrl"
     }).when("/angular.copy", {
       templateUrl: "views/angular.copy.html",
-      controller: "copy.controller",
+      controller: "copy",
       controllerAs: "copyCtrl"
     }).when("/form.custom-validation", {
       templateUrl: "views/form.validation.html",
-      controller: "form.controller",
+      controller: "form",
       controllerAs: "formCtrl"
     }).when("/form.inputs", {
       templateUrl: "views/form.inputs.html",
-      controller: "form.controller",
+      controller: "form",
       controllerAs: "formCtrl"
     }).when("/asynchronous-view", {
       templateUrl: "views/asynchronous.html",
-      controller: "asynchronous.controller",
+      controller: "asynchronous",
       controllerAs: "asynCtrl"
     });
 

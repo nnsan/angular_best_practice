@@ -1,4 +1,4 @@
-mainModule.controller("asynchronous.controller", [
+mainModule.controller("asynchronous", [
   "$scope",
   function ($scope) {
     $scope.viewManager = {

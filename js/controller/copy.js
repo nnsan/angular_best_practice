@@ -1,4 +1,4 @@
-mainModule.controller("copy.controller", [
+mainModule.controller("copy", [
   "$scope",
   "$window",
   function ($scope, $window) {

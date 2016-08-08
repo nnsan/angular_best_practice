@@ -1,4 +1,4 @@
-mainModule.controller("form.controller", [
+mainModule.controller("form", [
   "$scope",
   function ($scope) {
     $scope.data = {};

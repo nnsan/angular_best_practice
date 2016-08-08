@@ -1,4 +1,4 @@
-mainModule.controller("home.controller", [
+mainModule.controller("home", [
   "$scope",
   "$location",
   "serviceA",

@@ -5,11 +5,21 @@
   <form name="formCtrl.contactForm" ng-if="isShowContactForm">
     <div class="field required">
       <label>Contact Name</label>
-      <input name="contactName" type="text" ng-model="data.name" required>
+      <input name="contactName" type="text" ng-model="name" required>
     </div>
     <div class="field required">
       <label>Email</label>
-      <input name="contactEmail" type="email" ng-model="data.email" required>
+      <input name="contactEmail" type="email" ng-model="email" required>
+    </div>
+    <div class="field">
+      <label><input type="checkbox" ng-model="isStudent"/>Student</label>
+    </div>
+    <div class="field required" ng-show="isStudent">
+      <label>Student Code</label>
+      <input name="studentCode" type="number" ng-model="studentCode" required integer>
+    </div>
+    <div class="button-container">
+      <button ng-click="formCtrl.showScopeObject()">preview $scope object</button>
     </div>
   </form>
 </div>

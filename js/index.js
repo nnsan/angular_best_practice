@@ -26,10 +26,26 @@ mainModule.config([
         requireAdmin: false,
         requireLogin: true
       }
-    }).when("/form", {
+    }).when("/form.ng-if", {
       templateUrl: "views/form.html",
       controller: "form.controller",
       controllerAs: "formCtrl"
+    }).when("/angular.copy", {
+      templateUrl: "views/angular.copy.html",
+      controller: "copy.controller",
+      controllerAs: "copyCtrl"
+    }).when("/form.custom-validation", {
+      templateUrl: "views/form.validation.html",
+      controller: "form.controller",
+      controllerAs: "formCtrl"
+    }).when("/form.inputs", {
+      templateUrl: "views/form.inputs.html",
+      controller: "form.controller",
+      controllerAs: "formCtrl"
+    }).when("/asynchronous-view", {
+      templateUrl: "views/asynchronous.html",
+      controller: "asynchronous.controller",
+      controllerAs: "asynCtrl"
     });
 
     $routeProvider.otherwise({

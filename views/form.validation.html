@@ -1,15 +1,12 @@
 <div class="content-wrapper">
-  <div class="field">
-    <label><input type="checkbox" ng-model="isShowContactForm"/>Contact Form</label>
-  </div>
-  <form name="formCtrl.contactForm" ng-if="isShowContactForm">
+  <form name="contactForm">
     <div class="field required">
       <label>Contact Name</label>
       <input name="contactName" type="text" ng-model="data.name" required>
     </div>
-    <div class="field required">
-      <label>Email</label>
-      <input name="contactEmail" type="email" ng-model="data.email" required>
+    <div class="field">
+      <label>Age</label>
+      <input name="contactAge" type="number" ng-model="data.age" integer>
     </div>
   </form>
 </div>
@@ -20,6 +17,6 @@
   </div>
   <div>
     <label>Form controller $error inspect</label>
-    <pre>{{formCtrl.contactForm.$error | json: 2}}</pre>
+    <pre>{{contactForm.$error | json: 2}}</pre>
   </div>
 </div>

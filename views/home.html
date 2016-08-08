@@ -1,8 +1,23 @@
 <div>
-  <p>{{greeting}}</p>
+  <div class="welcome">
+    <p>{{greeting}}</p>
+    <p>Agenda:</p>
+  </div>
   <ul>
     <li>
-      <a href="" ng-click="homeCtrl.goFormPage()"><span>Form</span></a>
+      <a href="" ng-click="homeCtrl.goAngularCopy()"><span>Angular Copy</span></a>
+    </li>
+    <li>
+      <a href="" ng-click="homeCtrl.goFormPage()"><span>Form deal with ng-if</span></a>
+    </li>
+    <li>
+      <a href="" ng-click="homeCtrl.goFormCustomValidation()"><span>Form deal with custom validation</span></a>
+    </li>
+    <li>
+      <a href="" ng-click="homeCtrl.goFormInputs()"><span>Form inputs</span></a>
+    </li>
+    <li>
+      <a href="" ng-click="homeCtrl.goNgViewWithAsynchronousView()"><span>ngView contains asynchronous view</span></a>
     </li>
   </ul>
 </div>

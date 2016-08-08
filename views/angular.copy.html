@@ -1,0 +1,15 @@
+<div class="content-wrapper">
+  <form>
+    <div class="field">
+      <label>Profile picture</label>
+      <input file type="file" data="userProfile" accept="image/*">
+    </div>
+
+    <div class="button-container">
+      <button ng-click="onCancel()">Cancel</button>
+    </div>
+  </form>
+</div>
+<div class="preview-wrapper">
+  <img style="width: 100%" ng-src="{{previewProfile}}"/>
+</div>

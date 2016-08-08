@@ -13,6 +13,10 @@
       <input name="email" type="text" ng-model="data.email" required>
     </div>
     <div class="field">
+      <label>Birthday</label>
+      <input name="birthday" type="date" ng-model="data.birthday">
+    </div>
+    <div class="field">
       <label><input type="checkbox" ng-model="data.isStudent"/> Is Student</label>
     </div>
     <div class="field required" ng-if="data.isStudent">
@@ -27,5 +31,6 @@
 <div class="preview-wrapper">
   <div>
     <pre>{{data | json : 2}}</pre>
+    <pre>{{formContact.$error | json: 2}}</pre>
   </div>
 </div>

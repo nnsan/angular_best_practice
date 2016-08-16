@@ -1,0 +1,142 @@
+body {
+  font-family: 'Helvetica', Arial, sans-serif;
+  font-size: 16px;
+}
+
+form input, form select, form textarea {
+  font-size: inherit;
+  font-family: inherit;
+  display: block;
+
+  padding: 0.25em;
+  border-radius: 5px;
+  border: 1px solid #cfcfcf;
+}
+
+/*Style for common layout*/
+.container {
+  height: 100%;
+}
+.navigator {
+  margin-bottom: 10px;
+}
+.section {
+  position: relative;
+  height: 100%;
+}
+.main-view {
+  position: absolute;
+  top: 50px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+}
+
+.main-view div {
+  width: 100%;
+}
+
+.main-view li {
+  margin-bottom: 1em;
+}
+
+.main-view li:last-child {
+  margin-bottom: 0;
+}
+
+.main-view .welcome {
+  padding: 0 1em;
+}
+
+.content-wrapper, .preview-wrapper {
+  flex: 1;
+  overflow: auto;
+  padding: 0.75em;
+}
+
+.content-wrapper {
+  border-right: solid 1px #9d9d9d;
+}
+
+/*Style for Form Page*/
+.field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.75em;
+}
+.field:last-child {
+  margin-bottom: 0;
+}
+
+.field label {
+  margin-bottom: 0.25em;
+}
+
+.field input[type="checkbox"] {
+  display: inline;
+}
+.field input[type="file"] {
+  border: none;
+}
+
+.field.required label:after {
+  content: "*";
+  color: #ff0000;
+}
+.field-inline {
+  margin-bottom: 5px;
+}
+
+.field-inline input, .field-inline select {
+  display: inline;
+}
+
+.content-wrapper .information {
+  font-weight: bold;
+  margin: 10px 0px;
+}
+
+.information .time {
+  font-size: 2em;
+  color: #ff0000;
+}
+
+.time {
+  font-weight: bold;
+}
+
+.phone-detail-container {
+  padding: 5px;
+  border-bottom: 1px solid #cfcfcf;
+}
+
+.phone-detail-container:last-child {
+  border-bottom: none;
+}
+
+.phone-detail {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.phone-detail .image {
+  width: 50px;
+}
+
+.phone-detail .image img {
+  width: 100%;
+}
+
+.phone-detail .phone-info {
+  flex: 1;
+  padding-left: 10px;
+}
+
+.phone-detail .phone-info p {
+  margin: 5px 0;
+}

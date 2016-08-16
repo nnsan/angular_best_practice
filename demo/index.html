@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>Demo</title>
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+<script type="text/ng-template" id="home.html">
+  <div>
+    <div class="welcome">
+      <p>{{vm.greeting}}</p>
+      <p>Agenda:</p>
+    </div>
+
+    <ul>
+      <li>
+        <a href="" ng-click="vm.accessPage('$scopeAndNgIf')"><span>Deal with $scope and NgIf</span></a>
+      </li>
+      <li>
+        <a href="" ng-click="vm.accessPage('$scopeWatch')"><span>$scope watch strategies </span></a>
+      </li>
+      <li>
+        <a href="" ng-click="vm.accessPage('directiveManipulateDOM')"><span>Manipulate DOM element in Directive</span></a>
+      </li>
+      <li>
+        <a href="" ng-click="vm.accessPage('viewRenderingWithTimeout')"><span>View Rendering with $timeout service</span></a>
+      </li>
+      <li>
+        <a href="" ng-click="vm.accessPage('manuallyCompileTemplate')"><span>Manually compile and link a template to current view</span></a>
+      </li>
+      <li>
+        <a href="" ng-click="vm.accessPage('customFormValidation')"><span>Custom Form Validation</span></a>
+      </li>
+      <li>
+        <a href="" ng-click="vm.accessPage('blobImage')"><span>Blob object and Image File</span></a>
+      </li>
+    </ul>
+  </div>
+</script>
+<script type="text/ng-template" id="scope.ngif.html">
+  <div class="content-wrapper">
+    <div class="field ng-hide">
+      <label><input type="checkbox" ng-model="isShowContactForm" ng-init="isShowContactForm = true"/>Contact Form</label>
+    </div>
+    <form name="contactForm">
+      <div class="field">
+        <label>Contact Name</label>
+        <input name="contactName" type="text" ng-model="name">
+      </div>
+      <div class="field">
+        <label>Email</label>
+        <input name="contactEmail" type="email" ng-model="email">
+      </div>
+    </form>
+  </div>
+  <div class="preview-wrapper">
+    <div>
+      <label>Data | JSON format</label>
+      <pre>{{{"name": name, "email": email} | json : 2}}</pre>
+    </div>
+    <div>
+      <label>model controller $error inspect</label>
+      <pre>{{contactForm.$error | json: 2}}</pre>
+    </div>
+  </div>
+</script>
+<script type="text/ng-template" id="scope.watch.html">
+  <div class="content-wrapper">
+    <form name="vm.contactForm">
+      <div class="field required">
+        <label>Username</label>
+        <input name="username" type="text" ng-model="username" required>
+      </div>
+      <div class="field required">
+        <label>Points</label>
+        <input name="points" type="number" ng-model="points" required>
+      </div>
+
+      <div class="button-container" style="margin-bottom: 10px">
+        <button ng-click="vm.setUsers()">Set Users</button>
+      </div>
+      <div class="button-container" style="margin-bottom: 10px">
+        <button ng-click="vm.addUserToList()">Add new User</button>
+      </div>
+      <div class="button-container">
+        <button ng-click="vm.setValueForFirstElement()">Change Value of the first element</button>
+      </div>
+    </form>
+  </div>
+  <div class="preview-wrapper">
+    <div>
+      <label>By Reference {{vm.usersWatchByReferenceAt}}</label>
+      <pre>{{users | json : 2}}</pre>
+    </div>
+    <div>
+      <label>By Collection items {{vm.usersWatchByCollectionAt}}</label>
+      <pre>{{users | json : 2}}</pre>
+    </div>
+    <div>
+      <label>By Value {{vm.usersWatchByValueAt}}</label>
+      <pre>{{users | json : 2}}</pre>
+    </div>
+  </div>
+</script>
+<script type="text/ng-template" id="directive.manipulate.dom.html">
+  <div>
+    <div style="margin-bottom: 20px">
+      <label><input type="checkbox" ng-model="vm.isShowPhoneList">Show Phone List</label>
+    </div>
+    <div phone-list ng-if="vm.isShowPhoneList"></div>
+  </div>
+</script>
+<script type="text/ng-template" id="asynchronous.view.rendering.html">
+  <div>
+    <div class="normal-template" style="margin-bottom: 20px">
+      <p>This is description for page</p>
+    </div>
+    <div phone-list class="phone-list-container"></div>
+  </div>
+</script>
+<script type="text/ng-template" id="manually.compile.template.html">
+  <div class="content-wrapper">
+    <form name="vm.templateEditor">
+      <div class="field required">
+        <label>HTML Template</label>
+        <textarea rows="5" name="htmlTemplate" ng-model="vm.htmlTemplate"></textarea>
+      </div>
+      <div class="button-container">
+        <button ng-click="vm.compileTemplate(vm.htmlTemplate)">Compile Template</button>
+      </div>
+    </form>
+  </div>
+  <div class="preview-wrapper">
+    <div>
+      <label>Append new HTML element</label>
+      <div id="html-view-container" style="padding-top: 10px"></div>
+    </div>
+    <div style="margin-top: 10px">
+      <label>vm.data</label>
+      <pre>{{vm.data | json : 2}}</pre>
+    </div>
+    <div style="margin-top: 10px">
+      <label>$scope.username</label>
+      <pre>{{{"username": username} | json : 2}}</pre>
+    </div>
+  </div>
+</script>
+<script type="text/ng-template" id="custom.form.validation.html">
+  <div class="content-wrapper">
+    <form name="vm.contactForm">
+      <div class="field required">
+        <label>Contact Name</label>
+        <input name="contactName" type="text" ng-model="vm.name" required>
+      </div>
+      <div class="field">
+        <label>Age</label>
+        <input name="contactAge" type="number" ng-model="vm.age" integer>
+      </div>
+    </form>
+  </div>
+  <div class="preview-wrapper">
+    <div>
+      <label>Data | JSON format</label>
+      <pre>{{{"name": vm.name, "age": vm.age} | json : 2}}</pre>
+    </div>
+    <div>
+      <label>model controller $error inspect</label>
+      <pre>{{vm.contactForm.$error | json: 2}}</pre>
+    </div>
+  </div>
+</script>
+<script type="text/ng-template" id="blob.image.html">
+  <div class="content-wrapper">
+    <form>
+      <div class="field">
+        <label>Profile picture</label>
+        <input file type="file" data="userProfile" accept="image/*">
+      </div>
+
+      <div class="button-container">
+        <button ng-click="onCancel()">Cancel</button>
+      </div>
+    </form>
+  </div>
+  <div class="preview-wrapper">
+    <img style="width: 100%" ng-src="{{previewProfile}}"/>
+  </div>
+</script>
+<script type="text/ng-template" id="phone.list.directive.html">
+  <form name="vm.searchForm">
+    <div class="field-inline">
+      <label>Search</label>
+      <input type="text" ng-model="vm.phoneName"/>
+    </div>
+    <div class="field-inline">
+      <label>Sort by</label>
+      <select ng-options="item.name for item in vm.categories" ng-model="vm.category"></select>
+    </div>
+
+    <div phone-info class="phone-detail-container"
+         ng-repeat="phone in vm.phones | orderBy: vm.category.key | filter: vm.phoneName track by $index" data="phone">
+    </div>
+  </form>
+</script>
+<script type="text/ng-template" id="phone.info.directive.html">
+  <div class="phone-detail">
+    <div class="image">
+      <img ng-src="{{data.url}}">
+    </div>
+    <div class="phone-info">
+      <label ng-bind="data.name"></label>
+      <p ng-bind="data.description"></p>
+      <label ng-bind="'Price: ' + data.price"></label>
+    </div>
+  </div>
+</script>
+
+<div class="container">
+  <div class="navigator">
+    <a href="#/">Back to Home</a>
+  </div>
+
+  <ng-view class="main-view"></ng-view>
+</div>
+
+  <!-- Load library -->
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+  <script type="text/javascript" src="https://code.angularjs.org/1.5.8/angular-route.min.js"></script>
+  <script type="text/javascript" src="https://code.angularjs.org/1.5.8/angular-sanitize.min.js"></script>
+
+  <!-- Load source code -->
+  <script type="text/javascript" src="index.js"></script>
+  <script type="text/javascript">
+    window.bootstrap(document);
+  </script>
+</body>
+</html>
